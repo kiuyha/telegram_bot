@@ -7,7 +7,6 @@ import gemini
 import link_shorterner as shorting
 from keep_alive import keep_alive
 
-keep_alive()
 load_dotenv('.env')
 TOKEN: final = os.getenv('Telegram_Token')
 BOT_USERNAME: final = os.getenv('Bot_Username')
@@ -65,6 +64,7 @@ async def error(update:Update, context:ContextTypes.DEFAULT_TYPE):
 
 
 if __name__ == '__main__':
+    keep_alive()
     print('starting the bot...')
     app = Application.builder().token(TOKEN).build()
     
